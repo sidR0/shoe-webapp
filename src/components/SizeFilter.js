@@ -17,7 +17,7 @@ let sizeList = giveArrayRange(35, 49);
 function SizeFilter() {
     return (
         <div className="filter">
-            {sizeList.map((i) => <div className="grid-item">{i}</div>)}
+            {sizeList.map((i) => <div className="grid-item" key={i}>{i}</div>)}
         </div>
     )
 }
