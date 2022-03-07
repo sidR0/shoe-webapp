@@ -1,0 +1,14 @@
+.card-view{
+    width:83%;
+    height:100%;
+    padding:0 4%;
+    border-top: 2px solid #ebebeb;
+}
+
+.card_header{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top:47px;
+    margin-bottom:22px;
+    margin-left:20px;
+}

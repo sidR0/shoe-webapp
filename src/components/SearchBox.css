@@ -1,0 +1,22 @@
+.search_form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border:2px solid #ebebeb;
+    border-radius:10px;
+    padding:0 20px;
+}
+
+.search_box {
+    -webkit-appearance: none;
+    height: 40px;
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+    background-color: white;
+    border:0px;
+    font-size: 12px;
+}
+
+.search_icon {
+    width: 14px;
+}

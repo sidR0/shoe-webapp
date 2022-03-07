@@ -1,0 +1,14 @@
+.filter-view{
+    width:17%;
+    height: 100%;
+    padding:0 2%;
+    background-color:white;
+    border-top: 2px solid #ebebeb;
+    border-right: 2px solid #ebebeb;
+}
+
+.filter_header{
+    font-size: 14px;
+    margin-top: 25px;
+    margin-bottom:32px;
+}
