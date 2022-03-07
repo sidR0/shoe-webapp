@@ -2,7 +2,6 @@ import './CategoryFilter.css';
 import { useState } from "react";
 import state from '../index.js';
 import cardArray from './CardData.js';
-import { useEffect } from "react";
 
 function CategoryFilter(props) {
 

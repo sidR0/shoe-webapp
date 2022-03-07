@@ -5,6 +5,17 @@ function RangeFilter() {
 
     const [value, onChange] = useState(50);
 
+    function priceFilter(array, maxPrice) {
+
+        function isInPriceRange(cardDataItem) {
+            if (maxPrice <= cardDataItem.price) {
+                return true;
+            }
+        }
+
+        return array.filter((item) => isInPriceRange(item));
+    }
+
     return (
         <div className="range-filter">
             <input
