@@ -3,7 +3,7 @@
     column-gap: 5px;
     row-gap: 5px;
     grid-template-columns: 35px 35px 35px 35px 35px;
-    grid-template-rows: 35px 35px 35px;
+    /* grid-template-rows: 35px 35px 35px; */
 }
 
 .grid-item-disabled {
@@ -13,6 +13,7 @@
     text-align: center;
     border-radius:8px;
     padding:7px 0px 0px 0px;
+    height:35px;
 }
 
 .grid-item-enabled {
@@ -22,4 +23,41 @@
     text-align: center;
     border-radius:8px;
     padding:7px 0px 0px 0px;
+    height:35px;
+}
+
+@media screen and (max-width: 1450px) {
+    .filter{
+        display: grid;
+        column-gap: 5px;
+        row-gap: 5px;
+        grid-template-columns: 35px 35px 35px 35px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .filter{
+        display: grid;
+        column-gap: 5px;
+        row-gap: 5px;
+        grid-template-columns: 35px 35px 35px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filter{
+        display: grid;
+        column-gap: 5px;
+        row-gap: 5px;
+        grid-template-columns: 35px 35px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .filter{
+        display: grid;
+        column-gap: 5px;
+        row-gap: 5px;
+        grid-template-columns: 35px 35px;
+    }
 }

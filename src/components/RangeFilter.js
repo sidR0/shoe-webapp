@@ -33,7 +33,7 @@ function RangeFilter(props) {
                 onMouseUp={() => { handleEvent(value) }}
             />
             <div className="range-view">
-                {value}$
+                0$  -  {value}$
             </div>
         </div>
     )
