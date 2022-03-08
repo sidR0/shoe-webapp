@@ -1,14 +1,27 @@
 import './RangeFilter.css'
 import { useState } from "react";
+import { useEffect } from "react";
+import cardArray from './CardData.js';
 
-function RangeFilter() {
+function RangeFilter(props) {
 
-    const [value, onChange] = useState(50);
+    const [value, setValue] = useState(1);
+
+    useEffect(() => {
+        const elem = document.querySelector('.range-view');
+        if (elem) {
+            elem.style.left = `${Number(value / 5.8)}px`;
+        }
+    })
+
+    function handleEvent(value) {
+        props.setArray(priceFilter(cardArray, value));
+    }
 
     function priceFilter(array, maxPrice) {
 
         function isInPriceRange(cardDataItem) {
-            if (maxPrice <= cardDataItem.price) {
+            if (maxPrice >= cardDataItem.price) {
                 return true;
             }
         }
@@ -19,15 +32,17 @@ function RangeFilter() {
     return (
         <div className="range-filter">
             <input
-                type="range"
-                min="1"
-                max="100"
+                type="range" min="1" max="999"
                 value={value}
                 onChange={({ target: { value: radius } }) => {
-                    onChange(radius);
+                    setValue(radius);
                 }}
                 className="slider"
+                onMouseUp={() => { handleEvent(value) }}
             />
+            <div className="range-view">
+                {value}$
+            </div>
         </div>
     )
 }
