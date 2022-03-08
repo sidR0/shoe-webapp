@@ -10,7 +10,7 @@ let state = {
   isFormalChecked: false,
   isAllChecked: false,
   maxPrice: 1000,
-  selectedSize: giveArrayRange(35, 49, [])
+  selectedSize: [],
 };
 
 ReactDOM.render(
