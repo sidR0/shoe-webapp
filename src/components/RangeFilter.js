@@ -1,18 +1,10 @@
 import './RangeFilter.css'
 import { useState } from "react";
-import { useEffect } from "react";
 import cardArray from './CardData.js';
 
 function RangeFilter(props) {
 
     const [value, setValue] = useState(1);
-
-    useEffect(() => {
-        const elem = document.querySelector('.range-view');
-        if (elem) {
-            elem.style.left = `${Number(value / 5.8)}px`;
-        }
-    })
 
     function handleEvent(value) {
         props.setArray(priceFilter(cardArray, value));
