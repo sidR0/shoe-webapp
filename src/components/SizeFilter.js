@@ -32,6 +32,9 @@ function SizeFilter(props) {
         setSelectedSizeList(selections);
         props.setArray(sizeFilter(cardArray, selections));
         // console.log(selections);
+        if (selections.length === 0) {
+            props.setArray(cardArray);
+        }
     };
 
     function sizeFilter(array, selectedSizeArray) {
