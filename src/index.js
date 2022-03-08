@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-let state = {
+var state = {
   isSneakersChecked: false,
   isFlipFlopChecked: false,
   isFormalChecked: false,

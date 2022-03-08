@@ -1,6 +1,7 @@
 import './SizeFilter.css';
 import state from '../index.js';
 import cardArray from './CardData.js';
+import { useState } from "react";
 
 function giveArrayRange(start, end, except) {
     let array = [];
@@ -14,15 +15,22 @@ function giveArrayRange(start, end, except) {
     return array.filter((item) => !except.includes(item));
 };
 
-let sizeList = giveArrayRange(35, 49);
+let sizeData = giveArrayRange(35, 49);
 
 function SizeFilter(props) {
+
+    const [sizeList, setSizeList] = useState(sizeData);
+    const [selectedSizeList, setSelectedSizeList] = useState([]);
 
     let handleClick = (currentSize) => {
         let selections = state.selectedSize;
         if (!selections.includes(currentSize)) {
             selections.push(currentSize);
+        } else {
+            selections = arrayRemove(selections, currentSize);
+            state.selectedSize = selections;
         }
+        setSelectedSizeList(selections);
         props.setArray(sizeFilter(cardArray, selections));
         console.log(selections);
     };
@@ -37,9 +45,15 @@ function SizeFilter(props) {
         return array.filter((item) => willFitUser(item));
     }
 
+    function arrayRemove(array, value) {
+        return array.filter(function (i) {
+            return i !== value;
+        });
+    }
+
     return (
         <div className="filter">
-            {sizeList.map((i) => <div className="grid-item" key={i} onClick={() => { handleClick(i); }}>{i}</div>)}
+            {sizeList.map((i) => <div className={selectedSizeList.includes(i) ? "grid-item-enabled" : "grid-item-disabled"} key={i} onClick={() => { handleClick(i); }}>{i}</div>)}
         </div>
     )
 }
