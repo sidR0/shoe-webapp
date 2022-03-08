@@ -17,7 +17,7 @@
 
 .grid-item-enabled {
     background-color: rgb(255, 255, 255);
-    border: 1px solid #ebebeb;
+    border: 2px solid #a7a7a7;
     font-size: 12px;
     text-align: center;
     border-radius:8px;
