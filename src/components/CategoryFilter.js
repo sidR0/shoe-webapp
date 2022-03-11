@@ -2,6 +2,7 @@ import './CategoryFilter.css';
 import { useState } from "react";
 import state from '../index.js';
 import cardArray from './CardData.js';
+import filter from './Filters';
 
 function CategoryFilter(props) {
 
@@ -17,20 +18,11 @@ function CategoryFilter(props) {
         if (state.isFormalChecked) { selections.push("Formal") }
         if (state.isAllChecked) { selections = ["Sneakers", "FlipFlops", "Formal"]; }
         if (!state.isSneakersChecked && !state.isFlipFlopChecked && !state.isFormalChecked && !state.isAllChecked) { selections = ["Sneakers", "FlipFlops", "Formal"]; }
-        props.setArray(categoryFilter(cardArray, selections));
-        console.log(selections);
+        // props.setArray(categoryFilter(cardArray, selections));
+        // console.log(selections);
+        state.selectedCategory = selections;
+        props.setArray(filter(cardArray, state));
     };
-
-    function categoryFilter(array, categoryArray) {
-
-        function isInSelectedCategory(cardDataItem) {
-            if (categoryArray.includes(cardDataItem.type)) {
-                return true;
-            }
-        }
-
-        return array.filter((item) => isInSelectedCategory(item));
-    }
 
     return (
         <div className="category-filter">

@@ -2,6 +2,7 @@ import './SizeFilter.css';
 import state from '../index.js';
 import cardArray from './CardData.js';
 import { useState } from "react";
+import filter from './Filters';
 
 function giveArrayRange(start, end, except) {
     let array = [];
@@ -30,22 +31,14 @@ function SizeFilter(props) {
             state.selectedSize = selections;
         }
         setSelectedSizeList(selections);
-        props.setArray(sizeFilter(cardArray, selections));
+        // props.setArray(sizeFilter(cardArray, selections));
         // console.log(selections);
-        if (selections.length === 0) {
-            props.setArray(cardArray);
-        }
+        // if (selections.length === 0) {
+        //     props.setArray(cardArray);
+        // }
+        state.selectedSize = selections;
+        props.setArray(filter(cardArray, state));
     };
-
-    function sizeFilter(array, selectedSizeArray) {
-        function willFitUser(cardDataItem) {
-            if (cardDataItem.availableSizes.filter((size) => selectedSizeArray.includes(size)).length !== 0) {
-                return true;
-            }
-        }
-
-        return array.filter((item) => willFitUser(item));
-    }
 
     function arrayRemove(array, value) {
         return array.filter(function (i) {

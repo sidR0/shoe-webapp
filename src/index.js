@@ -9,8 +9,10 @@ var state = {
   isFlipFlopChecked: false,
   isFormalChecked: false,
   isAllChecked: false,
-  maxPrice: 1000,
+  maxPrice: 999,
+  selectedCategory: [],
   selectedSize: [],
+  selectedPriceRange: 999
 };
 
 ReactDOM.render(
